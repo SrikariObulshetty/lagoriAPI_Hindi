@@ -5,7 +5,6 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 
-const PORT = 5000;
 
 // Load JSON once at startup
 const careerPaths = JSON.parse(fs.readFileSync("career_paths.json", "utf-8"));
@@ -55,6 +54,7 @@ app.get("/api/roadmap", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+
+module.exports = app;
+
+
